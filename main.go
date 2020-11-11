@@ -8,6 +8,7 @@ import (
 	"os"
 	"sort"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -15,7 +16,8 @@ func main() {
 
 		f := fib()
 
-		res := &response{Message: "Hello World"}
+		dt := time.Now() 
+		res := &response{Message: dt.Format("01-02-2006 15:04:05")}
 
 		for _, e := range os.Environ() {
 			pair := strings.Split(e, "=")
